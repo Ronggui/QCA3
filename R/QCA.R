@@ -270,7 +270,7 @@ PIChart <- function(primeImplicants,explained=NULL){
     }
     ans
   }
-  
+
   if (is.null(explained)){
     explained <- attr(primeImplicants,"explained")
   }
@@ -319,7 +319,7 @@ solvePIChart <- function(chart, all.sol=TRUE){
     combos <- combn(nrow(chart), k)
     sol.matrix <- combos[, apply(combos, 2, function(idx) all(colSums(chart[idx,,drop = FALSE])>0)),drop=FALSE]
     } else {
-      sol.matrix <- matrix(which(ans==1), ncol=1)   
+      sol.matrix <- matrix(which(ans==1), ncol=1)
     }
   }
   else {
@@ -595,7 +595,7 @@ prettyPI <- function(object,traditional=TRUE,...){
   ans
 } ## end of prettyPI()
 
-print.QCA <- function(x,traditional=TRUE,show.truthTable=FALSE,...){
+print.QCA <- function(x, traditional=TRUE, show.truthTable=FALSE,...){
   cat("\nCall:\n", deparse(x$call), "\n\n", sep = "")
   PIs <- prettyPI(x, traditional=traditional)
   Nec <- commonConfiguration(x,traditional=traditional)
